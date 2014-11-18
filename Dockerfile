@@ -38,7 +38,7 @@ RUN \
   apt-get autoremove -y && \
   apt-get clean all
 
-RUN gem install cucumber phantomjs bundler
+RUN gem install cucumber phantomjs bundler capybara selenium-webdriver poltergeist rspec pry capybara-screenshot
 
 # Define mount points.
 VOLUME ["/data"]
@@ -47,7 +47,8 @@ VOLUME ["/data"]
 WORKDIR /data
 
 ONBUILD ADD . /data
-ONBUILD RUN bundle install
+# add the requirements to the gem install line instead, otherwise it runs bundler every single change
+#ONBUILD RUN bundle install
 
 CMD ["cucumber"]
 
