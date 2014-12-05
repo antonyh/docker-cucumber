@@ -30,7 +30,7 @@ Create a new docker file:
  
 [run the image]
 
-    docker run --rm -it -e HOST="http://server:port" antonyh/cucumber 
+    docker run --rm -it -e HOST="http://server:port" cucumber 
 
 Better yet... do it in one step.
 
