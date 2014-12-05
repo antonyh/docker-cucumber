@@ -21,12 +21,19 @@ USAGE
 =====
 
 Create a new docker file:
-FROM antonyh/cucumber
 
-[(re)build the image]
-docker build -t antonyh/cucumber . 
+    FROM antonyh/cucumber
+
+[(re)build the image when the tests change]
+
+    docker build -t cucumber . 
  
 [run the image]
-docker run --rm -it -e HOST="http://server:port" antonyh/cucumber 
+
+    docker run --rm -it -e HOST="http://server:port" antonyh/cucumber 
+
+Better yet... do it in one step.
+
+    docker build -t cucumber . && docker run --rm -it -e HOST="http://server:port" cucumber
 
 Enjoy.
