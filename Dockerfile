@@ -23,7 +23,7 @@ MAINTAINER Antony Hutchison <antony@hutchisontechnical.co.uk>
 ENV PHANTOMJS_VERSION 2.1.1
 
 # Commands
-RUN
+RUN \
   apt-get update && \
   apt-get upgrade -y && \
   apt-get install -y git wget libfreetype6 libfontconfig bzip2 && \
