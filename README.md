@@ -1,12 +1,12 @@
 docker-cucumber
 ===============
 
-Based on ruby:1.9.3
+Based on ruby:2.3.0
 
 This is:
 
-- cucumber 
-- phantomjs 1.9.7
+- cucumber
+- phantomjs 2.1.1
 - casperjs
 - capybara
 
@@ -26,11 +26,11 @@ Create a new docker file:
 
 [(re)build the image when the tests change]
 
-    docker build -t cucumber . 
- 
+    docker build -t cucumber .
+
 [run the image]
 
-    docker run --rm -it -e HOST="http://server:port" cucumber 
+    docker run --rm -it -e HOST="http://server:port" cucumber
 
 Better yet... do it in one step.
 
