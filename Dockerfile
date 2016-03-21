@@ -1,4 +1,4 @@
-# 
+#
 # Derived from https://registry.hub.docker.com/u/cmfatih/phantomjs/dockerfile/
 # and adapted to use the official Ruby base image
 # with the addition of ONBUILD triggers to copy the current working directory
@@ -10,17 +10,17 @@
 # USAGE
 # #####
 # [(re)build the image]
-# docker build -t antonyh/cucumber . 
-# 
+# docker build -t antonyh/cucumber .
+#
 # [run the image]
-# docker run --rm -it -e HOST="http://server:4503" antonyh/cucumber 
+# docker run --rm -it -e HOST="http://server:4503" antonyh/cucumber
 #
 
-FROM ruby:1.9.3
+FROM ruby:2.3.0
 MAINTAINER Antony Hutchison <antony@hutchisontechnical.co.uk>
 
 # Env
-ENV PHANTOMJS_VERSION 1.9.7
+ENV PHANTOMJS_VERSION 2.1.1
 
 # Commands
 RUN \
@@ -39,6 +39,7 @@ RUN \
   apt-get clean all
 
 RUN gem install cucumber phantomjs bundler capybara selenium-webdriver poltergeist rspec pry capybara-screenshot
+
 
 # Define mount points.
 VOLUME ["/data"]
